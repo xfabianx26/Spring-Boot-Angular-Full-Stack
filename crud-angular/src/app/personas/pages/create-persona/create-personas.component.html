@@ -1,0 +1,59 @@
+
+<!-- 3 espacio izqu 3 espacio en la derecha -->
+<div id="crearPersona" class="col-md-6 offset-md-3" style="margin-top: 10%;">
+
+<h3 class="text-center">Creando personas</h3>
+
+<form (ngSubmit)="onSubmit()">
+  <div >
+    <label for="nombre">Nombre <span class="text-danger">(*)</span></label>
+    <input
+      type="text"
+      class="form-control shadow p-1   bg-body rounded  shadow-none mb-2"
+      id="nombre"
+      [(ngModel)]="persona.nombre"
+      name="nombre"
+
+    />
+  </div>
+
+  <div >
+    <label >Apellido</label>
+    <input
+      type="text"
+      class="form-control shadow p-1   bg-body rounded  shadow-none   mb-2"
+      id="apellido"
+      [(ngModel)]="persona.apellido"
+      name="apellido"
+    />
+  </div>
+
+  <div >
+    <label for="email" >Email <span class="text-danger">(*)</span></label>
+    <input
+      type="text"
+      class="form-control shadow p-1   bg-body rounded  shadow-none mb-2"
+      id="email"
+      [(ngModel)]="persona.email"
+      name="email"
+    />
+  </div>
+
+  <div >
+    <label for="telefono" >Teléfono</label>
+    <input
+      type="text"
+      class="form-control shadow p-1   bg-body rounded  shadow-none mb-2"
+      id="telefono"
+      [(ngModel)]="persona.telefono"
+      name="telefono"
+    />
+  </div>
+
+  <div class="text-center ">
+
+    <button id="btnCrearPersona" type="submit" class="btn btn-dark text-white p-2 mt-5 px-4 py-2 shadow-none border border-dark" >Enviar</button>
+  </div>
+
+</form>
+</div>

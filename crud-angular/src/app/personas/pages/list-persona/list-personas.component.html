@@ -1,0 +1,46 @@
+
+
+
+
+  <div class="col" >
+    <h2 class=" text-center ">Listado de Personas</h2>
+
+
+    <table  class="table" *ngIf="personas.length >= 1; else info" >
+
+      <thead class="thead-dark">
+        <tr>
+          <th class="">id</th>
+          <th class="">Nombre</th>
+          <th class="">Apellido</th>
+          <th class="">Email</th>
+          <th class="">Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor = "let persona of personas; let i = index">
+          <td>{{ i+1}}</td>
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.apellido}}</td>
+          <td>{{persona.email}}</td>
+          <td>{{persona.telefono}}</td>
+          <td>
+            <button (click)="updatePersona(persona.id)" class="btn btn-info"><fa-icon [icon]="faEdit"></fa-icon></button>
+            <button (click)="deletePersona(persona.id)" class="btn btn-danger ms-2"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+           <fa-icon (click)="detallePersona(persona.id)" class="btn btn-success ms-2" [icon]="faEye"></fa-icon>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <ng-template #info>
+      <div class="alert alert-ligth text-center " role="alert" >
+        <img src="../../../../assets/img/big-data.png" alt="foto de bd" style="width: 100px;">
+        <br>
+        No hay información en la base de dato o el servidor está caído
+      </div>
+    </ng-template>
+
+  </div>
